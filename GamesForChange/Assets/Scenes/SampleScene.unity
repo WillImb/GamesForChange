@@ -1528,8 +1528,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c22bb294d7e687c49b80e8e0665e8308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockPosition: {fileID: 0}
-  sens: 0
+  lockPosition: {fileID: 200901337}
+  sens: 10
 --- !u!1 &967713979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1985,9 +1985,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71b53871dd98a5043908fc06e8cccb18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  cam: {fileID: 0}
-  speed: 0
+  rb: {fileID: 1441481312}
+  cam: {fileID: 963194227}
+  speed: 10
 --- !u!136 &1441481311
 CapsuleCollider:
   m_ObjectHideFlags: 0
