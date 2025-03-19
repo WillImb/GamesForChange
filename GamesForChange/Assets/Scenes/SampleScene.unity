@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 150627928}
   - component: {fileID: 150627927}
   m_Layer: 5
-  m_Name: Blurb
+  m_Name: Blurb 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fun facts and info about frogs
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 255812206}
   - component: {fileID: 255812205}
   m_Layer: 5
-  m_Name: Name
+  m_Name: Name 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -344,7 +344,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Name: Frog'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -433,7 +433,7 @@ GameObject:
   - component: {fileID: 314504160}
   - component: {fileID: 314504159}
   m_Layer: 5
-  m_Name: Name
+  m_Name: Name 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -478,7 +478,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Name: Robin'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -567,7 +567,7 @@ GameObject:
   - component: {fileID: 359529896}
   - component: {fileID: 359529895}
   m_Layer: 5
-  m_Name: Blurb
+  m_Name: Blurb 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -612,7 +612,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fun facts and info about rabbits
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -701,7 +701,7 @@ GameObject:
   - component: {fileID: 387672566}
   - component: {fileID: 387672565}
   m_Layer: 5
-  m_Name: Stats
+  m_Name: Stats 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -835,7 +835,7 @@ GameObject:
   - component: {fileID: 405702650}
   - component: {fileID: 405702649}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Image 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -910,7 +910,7 @@ GameObject:
   - component: {fileID: 421587221}
   - component: {fileID: 421587220}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Image 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1158,7 +1158,7 @@ GameObject:
   - component: {fileID: 774216771}
   - component: {fileID: 774216770}
   m_Layer: 5
-  m_Name: Blurb
+  m_Name: Blurb 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1203,7 +1203,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fun facts and info about robins
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1360,7 +1360,7 @@ GameObject:
   - component: {fileID: 939272170}
   - component: {fileID: 939272169}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Image 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1528,8 +1528,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c22bb294d7e687c49b80e8e0665e8308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockPosition: {fileID: 200901337}
-  sens: 10
+  lockPosition: {fileID: 0}
+  sens: 0
 --- !u!1 &967713979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1542,7 +1542,7 @@ GameObject:
   - component: {fileID: 967713982}
   - component: {fileID: 967713981}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Image 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1696,7 +1696,7 @@ GameObject:
   - component: {fileID: 1211916803}
   - component: {fileID: 1211916802}
   m_Layer: 5
-  m_Name: Name
+  m_Name: Name 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1741,7 +1741,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Name: Deer'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1830,7 +1830,7 @@ GameObject:
   - component: {fileID: 1307295396}
   - component: {fileID: 1307295395}
   m_Layer: 5
-  m_Name: Blurb
+  m_Name: Blurb 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1875,7 +1875,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fun facts and info about deer
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1985,9 +1985,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71b53871dd98a5043908fc06e8cccb18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 1441481312}
-  cam: {fileID: 963194227}
-  speed: 1000
+  rb: {fileID: 0}
+  cam: {fileID: 0}
+  speed: 0
 --- !u!136 &1441481311
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2116,7 +2116,7 @@ GameObject:
   - component: {fileID: 1518178264}
   - component: {fileID: 1518178263}
   m_Layer: 5
-  m_Name: Stats
+  m_Name: Stats 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2250,7 +2250,7 @@ GameObject:
   - component: {fileID: 1520639892}
   - component: {fileID: 1520639891}
   m_Layer: 5
-  m_Name: Stats
+  m_Name: Stats 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2295,17 +2295,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Family: Leporidae
-
-
-    Diet: Herbivore
-
-
-    Average Life Span: 2-9 yrs
-
-
-    Habitat:
-    Woodlands'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2500,7 +2490,7 @@ GameObject:
   - component: {fileID: 1635823357}
   - component: {fileID: 1635823356}
   m_Layer: 5
-  m_Name: Stats
+  m_Name: Stats 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2545,17 +2535,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Family: Cervidae
-
-
-    Diet: Herbivore
-
-
-    Average Life Span: 20+ yrs
-
-
-    Habitat:
-    Woodlands'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2902,6 +2882,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2045740447}
   - component: {fileID: 2045740446}
+  - component: {fileID: 2045740448}
   m_Layer: 0
   m_Name: JournalManager
   m_TagString: Untagged
@@ -2945,6 +2926,49 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2045740448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045740445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2b8254fb1d8495499819bf27d8b4e9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animals:
+  - 
+  - 
+  - 
+  - 
+  stats:
+  - 
+  - 
+  - 
+  - 
+  blurb:
+  - 
+  - 
+  - 
+  - 
+  nameText:
+  - {fileID: 1211916802}
+  - {fileID: 2051936076}
+  - {fileID: 314504159}
+  - {fileID: 255812205}
+  statText:
+  - {fileID: 1635823356}
+  - {fileID: 1520639891}
+  - {fileID: 1518178263}
+  - {fileID: 387672565}
+  blurbText:
+  - {fileID: 1307295395}
+  - {fileID: 359529895}
+  - {fileID: 774216770}
+  - {fileID: 150627927}
+  isPicTaken: 00000000
 --- !u!1 &2051936074
 GameObject:
   m_ObjectHideFlags: 0
@@ -2957,7 +2981,7 @@ GameObject:
   - component: {fileID: 2051936077}
   - component: {fileID: 2051936076}
   m_Layer: 5
-  m_Name: Name
+  m_Name: Name 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3002,7 +3026,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Name: Rabbit'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

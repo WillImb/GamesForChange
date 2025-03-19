@@ -45,7 +45,7 @@ public class JournalManager : MonoBehaviour
 
     void FlipPage()
     {
-        Debug.Log("in flip page");
+        //Debug.Log("in flip page");
         if (Input.GetMouseButtonDown(1) && currentPage != pages.Count - 2)
         {
             Debug.Log("flip forward");
