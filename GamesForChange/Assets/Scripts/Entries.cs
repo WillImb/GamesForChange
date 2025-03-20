@@ -52,8 +52,8 @@ public class Entries : MonoBehaviour
                 //splitting a string
                 string[] arr = line.Split('*');
                 animals[index] = arr[0];
-                stats[index] = arr[1];
-                blurb[index] = arr[2];
+                stats[index] = arr[1] + "\n\n" + arr[2] + "\n\n" + arr[3] + "\n\n" + arr[4];
+                blurb[index] = arr[5];
                 index++;
             }
         }
