@@ -30,12 +30,14 @@ public class JournalManager : MonoBehaviour
             currentPage = startingPage;
             pages[startingPage].SetActive(true);
             pages[startingPage + 1].SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
         }
         else if (Input.GetKeyDown(KeyCode.J) && isBookOpen) 
         {
             isBookOpen = false;
             canvas.SetActive(false);
             startingPage = currentPage;
+            Cursor.lockState = CursorLockMode.Locked;
         }
         if(isBookOpen)
         {
