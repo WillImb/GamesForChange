@@ -16,12 +16,12 @@ public class SceneManage : MonoBehaviour
         
     }
 
-    void LoadScene(int index)
+    public void LoadScene(int index)
     {
         SceneManager.LoadScene(index);
     }
 
-    void Quit()
+    public void Quit()
     {
         Application.Quit();
     }
