@@ -22,6 +22,12 @@ public class PhotoTaker : MonoBehaviour
     public float minFov;
     public float zoomSpeed;
 
+    public int width;
+    public int height;
+
+    float x;
+    float y;
+
     public LayerMask mask;
 
 
@@ -29,15 +35,17 @@ public class PhotoTaker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        screenCapture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
+        x = (Screen.width - width) / 2;
+        y = (Screen.height - height) / 2;
+
+        screenCapture = new Texture2D(width, height, TextureFormat.RGB24, false);
         cameraOverlay.SetActive(aimed);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && !photoDisplayArea.IsActive())
         {
             aimed = !aimed;
             cameraOverlay.SetActive(aimed);
@@ -80,14 +88,23 @@ public class PhotoTaker : MonoBehaviour
     {
         viewingPhoto = true;
 
+        cameraOverlay.SetActive(false);
+
         yield return new WaitForEndOfFrame();
 
-        Rect regionToRead = new Rect(0, 0, Screen.width, Screen.height);
+
+        Rect regionToRead = new Rect(x, y, width, height);
 
         screenCapture.ReadPixels(regionToRead, 0, 0, false);
         screenCapture.Apply();
 
+       byte[] byteArray = screenCapture.EncodeToPNG();
+       System.IO.File.WriteAllBytes(Application.dataPath + "/CameraScreenshot.png", byteArray);
+        
+
         CheckAnimal();
+
+        cameraOverlay.SetActive(true);
 
         ShowPhoto();
     }
@@ -116,7 +133,7 @@ public class PhotoTaker : MonoBehaviour
     void ShowPhoto()
     {
 
-        Sprite photoSprite = Sprite.Create(screenCapture, new Rect(0.0f, 0.0f, screenCapture.width, screenCapture.height), new Vector2(0.5f, 0.5f), 100.0f);
+        Sprite photoSprite = Sprite.Create(screenCapture, new Rect(0, 0, width, height), new Vector2(0f, 0f), 100.0f);
         photoDisplayArea.sprite = photoSprite;
 
 

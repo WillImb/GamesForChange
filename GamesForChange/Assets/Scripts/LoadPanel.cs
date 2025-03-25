@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
+using UnityEngine.SceneManagement;
 
 public class LoadPanel : MonoBehaviour
 {
@@ -22,7 +24,18 @@ public class LoadPanel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        for (int i = 0; i < 3; i++)
+        {
+            if (saves[i])
+            {
 
+                transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>().text = "Save " + i + 1;
+            }
+            else
+            {
+                transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>().text = "New Game";
+            }
+        }
     }
 
     public void LoadInteractable(bool on)
@@ -31,7 +44,7 @@ public class LoadPanel : MonoBehaviour
     }
     public void TrashInteractable(bool on)
     {
-        loadButton.interactable = on;
+        TrashButton.interactable = on;
     }
 
     public void SaveClick(int index)
@@ -56,6 +69,7 @@ public class LoadPanel : MonoBehaviour
     {
         saves[selectedIndex] = false;
         //code to save array
+        SaveArray();
     }
 
     public void LoadGame()
@@ -69,21 +83,45 @@ public class LoadPanel : MonoBehaviour
         else
         {
             saves[selectedIndex] = true;
-            //code to save saves array
+            SaveArray();
 
 
         }
 
 
+        //load GameScene
+        SceneManager.LoadScene(1);
 
     }
 
     void SaveArray()
     {
+        SavesPanel save = new SavesPanel
+        {
+            saveIndex = selectedIndex,
+            newGames = saves
+        }; 
 
+        string json = JsonUtility.ToJson(save);
+        
+        File.WriteAllText(Application.dataPath + "/Saves/savePanels.txt", json);
+        
+        
     }
     void LoadArray()
     {
+        string json = File.ReadAllText(Application.dataPath + "/Saves/savePanels.txt");
 
+        SavesPanel panels = JsonUtility.FromJson<SavesPanel>(json);
+
+        saves = panels.newGames;
+        selectedIndex = panels.saveIndex;
+    }
+
+
+    class SavesPanel
+    {
+        public int saveIndex;
+        public bool[] newGames;
     }
 }

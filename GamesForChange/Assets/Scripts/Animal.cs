@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Animal : MonoBehaviour
 {
-
+    public string title;
     public Transform head;
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,7 @@ public class Animal : MonoBehaviour
         {
             if(hit.transform.name == "Player")
             {
-                Debug.Log(name);
+                Debug.Log(title);
             }
         }
     }
