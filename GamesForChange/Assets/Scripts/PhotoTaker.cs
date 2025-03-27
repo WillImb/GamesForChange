@@ -8,7 +8,8 @@ using Unity.VisualScripting;
 public class PhotoTaker : MonoBehaviour
 {
     public Camera cam;
-
+    [SerializeField] JournalManager journal;
+    [SerializeField] Entries entries;
     [SerializeField] Image photoDisplayArea;
     [SerializeField] GameObject photoFrame;
     [SerializeField] bool aimed;
@@ -45,7 +46,7 @@ public class PhotoTaker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(1) && !photoDisplayArea.IsActive())
+        if (Input.GetMouseButtonDown(1) && !photoDisplayArea.IsActive() && !journal.isBookOpen)
         {
             aimed = !aimed;
             cameraOverlay.SetActive(aimed);
@@ -98,8 +99,7 @@ public class PhotoTaker : MonoBehaviour
         screenCapture.ReadPixels(regionToRead, 0, 0, false);
         screenCapture.Apply();
 
-       byte[] byteArray = screenCapture.EncodeToPNG();
-       System.IO.File.WriteAllBytes(Application.dataPath + "/CameraScreenshot.png", byteArray);
+       
         
 
         CheckAnimal();
@@ -125,7 +125,22 @@ public class PhotoTaker : MonoBehaviour
         if(Physics.SphereCast(cam.transform.position, 1, cam.transform.forward, out hit, 100f, mask))
         {
 
-            hit.transform.GetComponent<Animal>().CheckIfHeadInView();
+            Animal animal = hit.transform.GetComponent<Animal>();
+
+            if (animal.CheckIfHeadInView())
+            {
+                int index = entries.CheckFound(animal.title.ToLower());
+                if (index != -1)
+                {
+                    //save Photo;
+                    byte[] byteArray = screenCapture.EncodeToPNG();
+                    System.IO.File.WriteAllBytes(Application.dataPath + "/Saves/Photos/"+animal.title+"Photo.png", byteArray);
+                    entries.isPicTaken[index] = true;
+                    Debug.Log("Saved Photo");
+
+                    entries.loadData();
+                }
+            }
                       
         }
     }
