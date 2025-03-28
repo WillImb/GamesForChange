@@ -50,6 +50,10 @@ public class PhotoTaker : MonoBehaviour
         {
             aimed = !aimed;
             cameraOverlay.SetActive(aimed);
+            if (!cameraOverlay.activeSelf)
+            {
+                cam.fieldOfView = maxFov;
+            }
         }
 
         if (aimed)

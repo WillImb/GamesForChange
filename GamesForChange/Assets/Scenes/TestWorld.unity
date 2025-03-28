@@ -1727,7 +1727,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7669592359363603698, guid: ae332ed0914de7a49b5650945479ab30, type: 3}
       propertyPath: m_Name
-      value: Falcon 1
+      value: 'Falcon '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2620,7 +2620,7 @@ MonoBehaviour:
   cameraOverlay: {fileID: 1001018830}
   maxFov: 60
   minFov: 30
-  zoomSpeed: 5
+  zoomSpeed: 10
   width: 720
   height: 720
   mask:
