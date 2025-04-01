@@ -1,4 +1,10 @@
-Deer*Family: Cervidae*Diet: Herbivore*Average Life Span: 20+ yrs*Habitat: Woodlands*Fun facts and info about deer
-Rabbit*Family: Leporidae*Diet: Herbivore*Average Life Span: 2-9 yrs*Habitat: Woodlands*fun facts and info about rabbit
-Robin*Family:*Diet:*Average Life Span:*Habitat:*Fun facts and info about robins
-Frog*Family:*Diet:*Average Life Span:*Habitat:*Fun facts and info about frogs
+White Tailed Deer*Family: Cervidae*Diet: Herbivore*Average Life Span: 20+ yrs*Habitat: Woodlands*Fun facts and info about deer
+Bald Eagle*Family: Leporidae*Diet: Herbivore*Average Life Span: 2-9 yrs*Habitat: Woodlands*fun facts and info about eagle
+River Otter*Family:*Diet:*Average Life Span:*Habitat:*Fun facts and info about otter
+Peregrine Falcon*Family:*Diet:*Average Life Span:*Habitat:*Fun facts and info about Falcon
+Common Pheasant*Family:*Diet:*Average Life Span:*Habitat:*Fun facts and info about pheasant
+Woodpecker*Family:*Diet:*Average Life Span:*Habitat:*Fun facts and info about woodpecker
+Canadian Goose*Family:*Diet:*Average Life Span:*Habitat:*Fun facts and info about goose
+Black Rat Snake*Family:*Diet:*Average Life Span:*Habitat:*Fun facts and info about snake
+Rabbit*Family:*Diet:*Average Life Span:*Habitat:*Fun facts and info about rabbit
+Turtle*Family:*Diet:*Average Life Span:*Habitat:*Fun facts and info about turtle

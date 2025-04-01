@@ -19,7 +19,7 @@ public class JournalManager : MonoBehaviour
         }
         canvas.SetActive(false);
     }
-
+    
     // Update is called once per frame
     void Update()
     {

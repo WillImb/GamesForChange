@@ -2,19 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoadWorld : MonoBehaviour
 {
     // Start is called before the first frame update
-    int world;
+  
 
     public GameObject player;
     public Entries entries;
 
+    
+
     void Start()
     {
-       
 
+      
+      
 
 
     }
@@ -22,38 +26,62 @@ public class LoadWorld : MonoBehaviour
 
     private void Update()
     {
+        //Delete These before Build
+
+        //Save World
         if (Input.GetKeyDown(KeyCode.M))
         {
             SaveWorld();
         }
-    }
-
-
-    public void SaveWorld()
-    {
-        WorldSave save = new WorldSave
+        //Load Save
+        if (Input.GetKeyDown(KeyCode.L))
         {
-            tutorial = false,
-            playerPos = player.transform.position,
-            pictures = entries.isPicTaken
-        };
-        
-
-        string json = JsonUtility.ToJson(save);
-
-        if (world != 4)
-        {
-            File.WriteAllText(Application.dataPath + "/Saves/save" + world.ToString() + ".txt", json);
-            Debug.Log("Saved!");
+            Load();
         }
-        Debug.Log(world);
+        //Reset Save
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            if (File.Exists(Application.dataPath + "/Saves/worldSave.txt"))
+            {
+                File.Delete(Application.dataPath + "/Saves/worldSave.txt");
+                SceneManager.LoadScene(1);
+                
+            }
+        }
     }
 
 
-
-    public void Load()
+    void SaveWorld()
     {
+        SavesPanel saveWorld = new SavesPanel
+        {
+            pictures = entries.isPicTaken,
+            playerPos = player.transform.position
+        };
+        string saveJson = JsonUtility.ToJson(saveWorld);
+        File.WriteAllText(Application.dataPath + "/Saves/worldSave.txt", saveJson);
+        
+    }
+    void Load()
+    {
+        if(File.Exists(Application.dataPath + "/Saves/worldSave.txt"))
+        {
+            //if old Game
+            string jsonText = File.ReadAllText(Application.dataPath + "/Saves/worldSave.txt");
+            SavesPanel world = JsonUtility.FromJson<SavesPanel>(jsonText);
 
+            player.transform.position = world.playerPos;
+            entries.isPicTaken = world.pictures;
+
+            entries.loadData();
+}
+        else
+        {
+            
+            //if new Game
+            SaveWorld();
+
+        }
     }
 
 
@@ -64,13 +92,5 @@ public class LoadWorld : MonoBehaviour
     
 
 
-    class WorldSave
-    {
-        public bool tutorial;
-        public Vector3 playerPos;
-        public bool[] pictures;
-
-       
-
-    }
+    
 }

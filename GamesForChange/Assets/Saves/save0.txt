@@ -1,1 +1,0 @@
-{"tutorial":false,"playerPos":{"x":-1.940122541788103e-12,"y":1.5464001893997193,"z":-7.083874502614163e-13},"pictures":[true,true,false,false]}

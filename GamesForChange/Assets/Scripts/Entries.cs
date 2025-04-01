@@ -2,9 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq.Expressions;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Entries : MonoBehaviour
 {
@@ -23,6 +23,9 @@ public class Entries : MonoBehaviour
 
     //list of bools to know if a pic of an animal has been taken
     public bool[] isPicTaken = new bool[4];
+
+    //Array of Images
+    [SerializeField] Image[] images = new Image[4]; 
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +51,6 @@ public class Entries : MonoBehaviour
             while ((line = info.ReadLine()) != null)
             {
                 Console.WriteLine(line);
-
                 //splitting a string
                 string[] arr = line.Split('*');
                 animals[index] = arr[0];
@@ -69,7 +71,9 @@ public class Entries : MonoBehaviour
                 info.Close();
             }
         }
-
+        //Will Here. Im going to redo this part because theres a better way of reading and writing data to unity plus I need to implement this with loading the save file
+        // the entries section is fine because i dont need to implement it.
+        /*
         StreamReader picTaken = new StreamReader("../GamesForChange/Files/picTaken_info.txt");
         try
         {
@@ -102,9 +106,10 @@ public class Entries : MonoBehaviour
                 picTaken.Close();
             }
         }
+        */
     }
 
-    void loadData()
+    public void loadData()
     {
         //loading all the names
         for (int i = 0; i < animals.Length; i++)
@@ -115,7 +120,32 @@ public class Entries : MonoBehaviour
             {
                 statText[i].text = stats[i];
                 blurbText[i].text = blurb[i];
+                //Loading the images
+                byte[] byteArray = System.IO.File.ReadAllBytes(Application.dataPath + "/Saves/Photos/" + animals[i].ToLower() + "Photo.png");
+                Texture2D tex = new Texture2D(2, 2);
+                tex.LoadImage(byteArray);
+                Rect rec = new Rect(0, 0, tex.width, tex.height); 
+                Sprite sprite = Sprite.Create(tex, rec, new Vector2(0, 0), 1); 
+                images[i].sprite = sprite;
             }
         }
+    }
+    public int CheckFound(string name)
+    {
+        
+        for(int i = 0; i < isPicTaken.Length; i++)
+        {
+            if (animals[i].ToLower() == name)
+            {
+                
+                if (!isPicTaken[i]) 
+                { 
+
+                    return i;
+                }
+            } 
+        }
+        return -1;
+        
     }
 }
