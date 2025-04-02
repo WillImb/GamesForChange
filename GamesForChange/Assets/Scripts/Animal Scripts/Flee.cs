@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Fleer : Agent
+public class Flee : Agent
 {
     // Fields for Fleerer
     public GameObject target;

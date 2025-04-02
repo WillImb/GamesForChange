@@ -6,6 +6,7 @@ TagManager:
   tags:
   - eagle
   - deer
+  - Audio
   layers:
   - Default
   - TransparentFX

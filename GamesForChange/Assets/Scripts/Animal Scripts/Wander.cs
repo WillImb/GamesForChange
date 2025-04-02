@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Wanderer : Agent
+public class Wander : Agent
 {
     // Fields for wander behavior
     public bool isWandering;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Seeker : Agent
+public class Seek : Agent
 {
     // Fields for Seeker
     public GameObject target;
