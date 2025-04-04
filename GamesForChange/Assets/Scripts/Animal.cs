@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
@@ -25,9 +24,12 @@ public class Animal : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(head.position,Camera.main.transform.position - head.position, out hit , 100f))  
         {
-            if(hit.transform.name == "Player")
+           
+            if (hit.transform.name == "Player")
             {
+                Debug.Log(name);
                 return true;
+               
             }
         }
 

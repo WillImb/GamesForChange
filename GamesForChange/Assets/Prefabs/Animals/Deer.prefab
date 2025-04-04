@@ -115,6 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5563817719208056503}
   - component: {fileID: 6753820055073359019}
+  - component: {fileID: 959273367808898243}
   m_Layer: 3
   m_Name: Deer
   m_TagString: Untagged
@@ -153,6 +154,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: white tailed deer
   head: {fileID: 6598326612142693149}
+--- !u!65 &959273367808898243
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5222042235540190626}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6389424265589508146
 GameObject:
   m_ObjectHideFlags: 0

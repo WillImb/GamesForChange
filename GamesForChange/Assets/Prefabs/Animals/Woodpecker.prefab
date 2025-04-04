@@ -146,6 +146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5308523330864871512}
   - component: {fileID: 624343558031312362}
+  - component: {fileID: 7872205512764245985}
   m_Layer: 3
   m_Name: Woodpecker
   m_TagString: Untagged
@@ -184,3 +185,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: woodpecker
   head: {fileID: 3340449590508262592}
+--- !u!65 &7872205512764245985
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7669592359363603698}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
