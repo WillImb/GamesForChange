@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-C:\Users\willi\Documents\GitHub\GamesForChange\GamesForChange
-=======
 C:\Users\Shaelin Brown\Downloads\Misc\GamesForChange\GamesForChange
->>>>>>> 9a2221e7b4b11783e80a1c0fb0007969af230796
