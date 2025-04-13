@@ -477,7 +477,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 983153353}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: ShowPanel
+        m_MethodName: ShowScene
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2129285592}
@@ -806,7 +806,7 @@ RectTransform:
   m_Father: {fileID: 240836240}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1469,7 +1469,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 983153353}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: HidePanel
+        m_MethodName: HideScene
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1417199618}
@@ -1809,7 +1809,7 @@ RectTransform:
   m_Father: {fileID: 789620922}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2213,6 +2213,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60225cba2ae91b14089a533b5441458a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasPauseScreen: 0
+  pauseScene: {fileID: 0}
 --- !u!114 &983153354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2539,7 +2541,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 983153353}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: ShowPanel
+        m_MethodName: ShowScene
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1417199618}
@@ -3215,7 +3217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1417199619
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3308,7 +3310,7 @@ RectTransform:
   m_Father: {fileID: 593900644}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3838,8 +3840,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 983153352}
-        m_TargetAssemblyTypeName: SceneManage, Assembly-CSharp
+      - m_Target: {fileID: 983153353}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
@@ -4017,7 +4019,7 @@ RectTransform:
   m_Father: {fileID: 2131325639}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4144,7 +4146,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 983153353}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: HidePanel
+        m_MethodName: HideScene
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2129285592}
@@ -4808,7 +4810,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2129285593
 RectTransform:
   m_ObjectHideFlags: 0
