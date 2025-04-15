@@ -428,7 +428,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -106}
+  m_AnchoredPosition: {x: 0, y: -287}
   m_SizeDelta: {x: 439.0039, y: 109.2713}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &211520937
@@ -1305,7 +1305,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'NewGame
+  m_text: 'New Game
 
 '
   m_isRightToLeft: 0
@@ -2020,7 +2020,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 180}
+  m_AnchoredPosition: {x: 0, y: -14}
   m_SizeDelta: {x: 439.0039, y: 109.2713}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &934394358
@@ -2165,6 +2165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1643289687}
   sfxSource: {fileID: 1212302913}
+  music: {fileID: 8300000, guid: 66ff930a5d8675a4b85e10ad138f5f34, type: 3}
   birdAmbience: {fileID: 8300000, guid: 6920b972daf10b946a86bfa49f7ef5c5, type: 3}
   woodpecker: {fileID: 8300000, guid: be1550e7f08a7b543b564ae05b6b09a6, type: 3}
 --- !u!1 &983153351
@@ -2493,7 +2494,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 49.999977}
+  m_AnchoredPosition: {x: 0, y: -152}
   m_SizeDelta: {x: 439.0039, y: 109.2713}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1062931770
@@ -3794,7 +3795,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -251.00003}
+  m_AnchoredPosition: {x: 0, y: -422}
   m_SizeDelta: {x: 439.0039, y: 109.2713}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1701178131
@@ -4561,7 +4562,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 306}
+  m_AnchoredPosition: {x: 0, y: 122}
   m_SizeDelta: {x: 439.0039, y: 109.2713}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2016339479
