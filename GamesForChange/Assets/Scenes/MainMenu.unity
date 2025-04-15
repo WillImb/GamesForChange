@@ -1936,7 +1936,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1707766999}
         m_TargetAssemblyTypeName: SaveAdnLoad, Assembly-CSharp
-        m_MethodName: OverWriteSave
+        m_MethodName: OverWriteSavePrefs
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2215,6 +2215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPauseScreen: 0
   pauseScene: {fileID: 0}
+  screenOpen: 0
 --- !u!114 &983153354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4609,7 +4610,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1707766999}
         m_TargetAssemblyTypeName: SaveAdnLoad, Assembly-CSharp
-        m_MethodName: NewGame
+        m_MethodName: NewGamePrefs
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

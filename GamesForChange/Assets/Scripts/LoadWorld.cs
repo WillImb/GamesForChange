@@ -31,22 +31,17 @@ public class LoadWorld : MonoBehaviour
         //Save World
         if (Input.GetKeyDown(KeyCode.M))
         {
-            SaveWorld();
+            SaveWorldPrefs();
         }
         //Load Save
         if (Input.GetKeyDown(KeyCode.L))
         {
-            Load();
+            LoadPrefs();
         }
         //Reset Save
         if (Input.GetKeyDown(KeyCode.N))
         {
-            if (File.Exists(Application.dataPath + "/Saves/worldSave.txt"))
-            {
-                File.Delete(Application.dataPath + "/Saves/worldSave.txt");
-                SceneManager.LoadScene(1);
-                
-            }
+            ResetSavePrefs();
         }
     }
 
@@ -59,7 +54,10 @@ public class LoadWorld : MonoBehaviour
             playerPos = player.transform.position
         };
         string saveJson = JsonUtility.ToJson(saveWorld);
+
+        //For Desktop
         File.WriteAllText(Application.dataPath + "/Saves/worldSave.txt", saveJson);
+
         
     }
     void Load()
@@ -83,14 +81,65 @@ public class LoadWorld : MonoBehaviour
 
         }
     }
+    void ResetSave()
+    {
+        if (File.Exists(Application.dataPath + "/Saves/worldSave.txt"))
+        {
+            File.Delete(Application.dataPath + "/Saves/worldSave.txt");
+            SceneManager.LoadScene(1);
+
+        }
+    }
+
+
+    //These are for loading and saving in the web version
+    void SaveWorldPrefs()
+    {
+        SavesPanel saveWorld = new SavesPanel
+        {
+            pictures = entries.isPicTaken,
+            playerPos = player.transform.position
+        };
+        string saveJson = JsonUtility.ToJson(saveWorld);
+
+
+        PlayerPrefs.SetString("save", saveJson);
+
+
+    }
+    void LoadPrefs()
+    {
+        if (PlayerPrefs.GetString("save", "") != "")
+        {
+            //if old Game
+            string jsonText = PlayerPrefs.GetString("save", "");
+            SavesPanel world = JsonUtility.FromJson<SavesPanel>(jsonText);
+
+            player.transform.position = world.playerPos;
+            entries.isPicTaken = world.pictures;
+
+            entries.loadData();
+        }
+        else
+        {
+
+            //if new Game
+            SaveWorldPrefs();
+
+        }
+    }
+    void ResetSavePrefs()
+    {
+        if (PlayerPrefs.GetString("save", "") != "")
+        {
+            PlayerPrefs.SetString("save", "");
+        }
+    }
 
 
 
 
 
 
-    
 
-
-    
 }

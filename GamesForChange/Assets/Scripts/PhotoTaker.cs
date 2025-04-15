@@ -15,6 +15,8 @@ public class PhotoTaker : MonoBehaviour
     [SerializeField] bool aimed;
     public GameObject cameraOverlay;
 
+    public UIManager uimanager;
+
     Texture2D screenCapture;
     bool viewingPhoto;
 
@@ -46,10 +48,26 @@ public class PhotoTaker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(1) && !photoDisplayArea.IsActive() && !journal.isBookOpen)
+        if (Input.GetMouseButtonDown(1) && !photoDisplayArea.IsActive())
         {
-            aimed = !aimed;
-            cameraOverlay.SetActive(aimed);
+            if (!uimanager.screenOpen)
+            {
+                uimanager.screenOpen = true;
+                aimed = true;
+                cameraOverlay.SetActive(aimed);
+            }
+            else
+            {
+                if (cameraOverlay.activeSelf)
+                {
+                    uimanager.screenOpen = false;
+                    aimed = false;
+                    cameraOverlay.SetActive(aimed);
+                }
+            }
+            
+            
+            
             if (!cameraOverlay.activeSelf)
             {
                 cam.fieldOfView = maxFov;

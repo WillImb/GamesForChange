@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
 {
     public bool hasPauseScreen;
     public GameObject pauseScene;
+    public bool screenOpen;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,17 +18,20 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && hasPauseScreen)
         {
-            if (hasPauseScreen)
+            
+            if (!screenOpen)
             {
-
-                Time.timeScale = 0;
+               
+                screenOpen = true;
                 ShowScene(pauseScene);
                 Cursor.lockState = CursorLockMode.None;
+                
             }
             else
             {
+                screenOpen = false;
                 Resume();
                 HideScene(pauseScene);               
                 
@@ -55,7 +59,7 @@ public class UIManager : MonoBehaviour
 
     public void Resume()
     {
-        Time.timeScale = 1;
+        
         Cursor.lockState = CursorLockMode.Locked;
     }
 

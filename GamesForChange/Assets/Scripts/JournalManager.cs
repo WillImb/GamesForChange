@@ -10,6 +10,7 @@ public class JournalManager : MonoBehaviour
     public int currentPage;
     public GameObject canvas;
     public List<GameObject> pages;
+    public UIManager uimanager;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,15 +26,20 @@ public class JournalManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.J) && !isBookOpen)
         {
-            isBookOpen = true;
-            canvas.SetActive(true);
-            currentPage = startingPage;
-            pages[startingPage].SetActive(true);
-            pages[startingPage + 1].SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
+            if (!uimanager.screenOpen)
+            {
+                uimanager.screenOpen = true;
+                isBookOpen = true;
+                canvas.SetActive(true);
+                currentPage = startingPage;
+                pages[startingPage].SetActive(true);
+                pages[startingPage + 1].SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+            }
         }
         else if (Input.GetKeyDown(KeyCode.J) && isBookOpen) 
         {
+            uimanager.screenOpen = false;
             isBookOpen = false;
             canvas.SetActive(false);
             startingPage = currentPage;

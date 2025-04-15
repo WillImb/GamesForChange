@@ -17,6 +17,21 @@ public class SaveAdnLoad : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //WebVersion
+        if (PlayerPrefs.GetString("save", "") != "")
+        {
+          
+            newGameButton.interactable = true;
+            continueButton.interactable = true;
+        }
+        else
+        {
+            
+            continueButton.interactable = false;
+            newGameButton.interactable = true;
+        }
+        //Desktop Version
+        /*
         if (File.Exists(Application.dataPath + "/Saves/worldSave.txt"))
         {
             newGameButton.interactable = true;
@@ -27,6 +42,7 @@ public class SaveAdnLoad : MonoBehaviour
             continueButton.interactable = false;
             newGameButton.interactable = true;
         }
+        */
     }
 
     // Update is called once per frame
@@ -50,6 +66,21 @@ public class SaveAdnLoad : MonoBehaviour
             ChangeScene();
         }
     }
+    public void NewGamePrefs()
+    {
+
+        if (PlayerPrefs.GetString("save", "") != "")
+        {
+            //OverWriteExistingSave
+            overWritePopUp.SetActive(true);
+        }
+        else
+        {
+            //New Game
+
+            ChangeScene();
+        }
+    }
 
     public void Continue()
     {
@@ -62,11 +93,15 @@ public class SaveAdnLoad : MonoBehaviour
         File.Delete(Application.dataPath + "/Saves/worldSave.txt");
         NewGame();
     }
+    //For Web Version
+    public void OverWriteSavePrefs()
+    {
+        PlayerPrefs.SetString("save", "");
+        NewGamePrefs();
+    }
 
-   void Load()
-   {
-        
-   }
+
+
     public void ClosePopUp()
     {
         overWritePopUp.SetActive(false);
