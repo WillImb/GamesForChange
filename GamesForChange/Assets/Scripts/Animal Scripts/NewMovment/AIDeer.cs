@@ -15,8 +15,8 @@ public class AIDeer : MonoBehaviour
     public Transform animalArea;
 
     public int eatTime;
-    public int wanderSpeed;
-    public int fleeSpeed;
+    public float wanderSpeed;
+    public float fleeSpeed;
 
 
     bool isWandering;
@@ -41,6 +41,7 @@ public class AIDeer : MonoBehaviour
     {
         if (isFleeing)
         {
+            m_Agent.speed = fleeSpeed;
             if (Vector3.Distance(player.position, transform.position) > fleeDist)
             {
                 isFleeing = false;
@@ -71,7 +72,7 @@ public class AIDeer : MonoBehaviour
             
             if (isWandering)
             {
-
+                m_Agent.speed = wanderSpeed;
                 if (m_Agent.pathPending || !m_Agent.isOnNavMesh || m_Agent.remainingDistance > 0.1f)
                     return;
 
@@ -103,7 +104,7 @@ public class AIDeer : MonoBehaviour
     {
         isWandering = false;
         
-        int secs = Random.Range(5, 15);
+        int secs = Random.Range(5, eatTime);
         yield return new WaitForSeconds(secs);
 
         if (Vector3.Distance(player.position, transform.position) < fleeDist)

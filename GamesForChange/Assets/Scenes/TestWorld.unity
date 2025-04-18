@@ -1818,6 +1818,7 @@ GameObject:
   - component: {fileID: 331436915}
   - component: {fileID: 331436914}
   - component: {fileID: 331436913}
+  - component: {fileID: 331436916}
   m_Layer: 0
   m_Name: RabbitHole
   m_TagString: hole
@@ -1890,6 +1891,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &331436916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331436912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e90089261b71345bf94f8ed2ef39bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnDist: 0
+  hiddenRabbits: 0
+  player: {fileID: 1441481315}
+  rabbit: {fileID: 771099548078986459, guid: 7710c49e2a86eaa4db7824c947de01c5, type: 3}
+  rabbitArea: {fileID: 89045397}
+  xExtent: 28
+  zExtent: 14
 --- !u!1001 &332463360
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4395,7 +4415,7 @@ MonoBehaviour:
   animalArea: {fileID: 1258500581}
   eatTime: 0
   wanderSpeed: 5
-  fleeSpeed: 0
+  fleeSpeed: 20
   fleeDist: 10
   fleePoints:
   - {fileID: 1453431191}
@@ -4872,7 +4892,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 30a7dd8d41953974fa3a9f7924fc8c46, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 932278d1b2dde3c4ea500c55897fc418, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &801857415
 Transform:
@@ -7783,9 +7803,9 @@ MonoBehaviour:
   xExtent: 28
   zExtent: 14
   animalArea: {fileID: 1896352462}
-  eatTime: 0
-  wanderSpeed: 5
-  fleeSpeed: 0
+  eatTime: 5
+  wanderSpeed: 3.5
+  fleeSpeed: 12
   fleeDist: 10
   fleePoints:
   - {fileID: 76386967}
@@ -11593,8 +11613,8 @@ MonoBehaviour:
   zExtent: 14
   animalArea: {fileID: 89045398}
   isFleeing: 0
-  wanderSpeed: 0
-  fleeSpeed: 0
+  wanderSpeed: 5
+  fleeSpeed: 22
   player: {fileID: 1441481315}
   fleeDist: 5
   hole: {fileID: 331436915}

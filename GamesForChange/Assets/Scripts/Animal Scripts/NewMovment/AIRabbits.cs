@@ -17,8 +17,8 @@ public class AIRabbits : MonoBehaviour
     bool isWandering;
     public bool isFleeing;
 
-    public int wanderSpeed;
-    public int fleeSpeed;
+    public float wanderSpeed;
+    public float fleeSpeed;
 
     public Transform player;
     public int fleeDist;
@@ -36,6 +36,7 @@ public class AIRabbits : MonoBehaviour
     {
         if (isFleeing)
         {
+            m_Agent.speed = fleeSpeed;
             m_Agent.destination = hole.position;
 
             if (Vector3.Distance(transform.position, hole.position) < 1f)
@@ -53,7 +54,7 @@ public class AIRabbits : MonoBehaviour
             }
             if (isWandering)
             {
-               
+                m_Agent.speed = wanderSpeed;
                 if (m_Agent.pathPending || !m_Agent.isOnNavMesh || m_Agent.remainingDistance > 0.1f)
                     return;
 
