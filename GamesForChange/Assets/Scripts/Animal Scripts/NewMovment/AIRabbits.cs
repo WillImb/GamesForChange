@@ -17,6 +17,9 @@ public class AIRabbits : MonoBehaviour
     bool isWandering;
     public bool isFleeing;
 
+    public int wanderSpeed;
+    public int fleeSpeed;
+
     public Transform player;
     public int fleeDist;
     public Transform hole;

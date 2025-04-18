@@ -14,6 +14,9 @@ public class AIDeer : MonoBehaviour
     
     public Transform animalArea;
 
+    public int wanderSpeed;
+    public int fleeSpeed;
+
     bool isWandering;
 
     bool isFleeing;
