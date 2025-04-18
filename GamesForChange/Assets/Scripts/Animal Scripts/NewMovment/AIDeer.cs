@@ -14,11 +14,14 @@ public class AIDeer : MonoBehaviour
     
     public Transform animalArea;
 
+    public int eatTime;
     public int wanderSpeed;
     public int fleeSpeed;
 
+
     bool isWandering;
 
+    
     bool isFleeing;
     public int fleeDist;
 
