@@ -22,7 +22,7 @@ public class Animal : MonoBehaviour
     public bool CheckIfHeadInView()
     {
         RaycastHit hit;
-        if(Physics.Raycast(head.position,Camera.main.transform.position - head.position, out hit , 100f))  
+        if(Physics.Raycast(head.position,Camera.main.transform.position - head.position, out hit , 300f))  
         {
            
             if (hit.transform.name == "Player")

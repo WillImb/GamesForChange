@@ -19,6 +19,8 @@ public class AIDeer : MonoBehaviour
     public float fleeSpeed;
 
 
+    public Animator animator;
+
     bool isWandering;
 
     
@@ -32,7 +34,7 @@ public class AIDeer : MonoBehaviour
     void Start()
     {
         m_Agent = GetComponent<NavMeshAgent>();
-        
+        animator = GetComponent<Animator>();
         isWandering = true;
         m_Agent.destination = GetNewDest();
     }
@@ -42,6 +44,7 @@ public class AIDeer : MonoBehaviour
         if (isFleeing)
         {
             m_Agent.speed = fleeSpeed;
+            animator.SetBool("wandering", true);
             if (Vector3.Distance(player.position, transform.position) > fleeDist)
             {
                 isFleeing = false;
@@ -84,9 +87,18 @@ public class AIDeer : MonoBehaviour
 
 
     Vector3 GetNewDest()
-    {
+    {      
+
         Vector3 newPos = new Vector3(Random.Range(animalArea.position.x - xExtent, animalArea.position.x + xExtent), animalArea.position.y, 
             Random.Range(animalArea.position.z - zExtent, animalArea.position.z + zExtent));
+
+        RaycastHit rayHit;
+        if (Physics.Raycast(newPos, Vector3.down, out rayHit, 100f))
+        {
+            newPos = rayHit.point;
+            transform.up = rayHit.normal;
+        }
+
 
         NavMeshHit hit;
         
@@ -103,16 +115,17 @@ public class AIDeer : MonoBehaviour
     IEnumerator EatCoroutine()
     {
         isWandering = false;
-        
+        animator.SetBool("wandering", false);
         int secs = Random.Range(5, eatTime);
         yield return new WaitForSeconds(secs);
 
         if (Vector3.Distance(player.position, transform.position) < fleeDist)
         {
             isFleeing = true;
+            
             yield break;
         }
-
+        animator.SetBool("wandering", true);
         isWandering = true;
 
         m_Agent.destination = GetNewDest();

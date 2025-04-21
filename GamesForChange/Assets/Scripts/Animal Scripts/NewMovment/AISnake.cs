@@ -25,8 +25,19 @@ public class AISnake : MonoBehaviour
         // Update is called once per frame
     void Update()
     {
+        RaycastHit rayHit;
+        if (Physics.Raycast(transform.position, Vector3.down, out rayHit, 100f))
+        {
+           
+            Vector3 up = rayHit.normal;
+            Vector3 right = GetComponent<Animal>().head.right;
+            Vector3 forward = Vector3.Cross(right, up);
 
-         if (m_Agent.pathPending || !m_Agent.isOnNavMesh || m_Agent.remainingDistance > 0.1f)
+           
+            transform.rotation = Quaternion.LookRotation(forward, up);
+        }
+
+        if (m_Agent.pathPending || !m_Agent.isOnNavMesh || m_Agent.remainingDistance > 0.1f)
                 return;
 
             m_Agent.destination = GetNewDest();
@@ -39,6 +50,13 @@ public class AISnake : MonoBehaviour
     {
         Vector3 newPos = new Vector3(Random.Range(animalArea.position.x - xExtent, animalArea.position.x + xExtent), animalArea.position.y, 
             Random.Range(animalArea.position.z - zExtent, animalArea.position.z + zExtent));
+
+        RaycastHit rayHit;
+        if (Physics.Raycast(newPos, Vector3.down, out rayHit, 100f))
+        {
+            newPos = rayHit.point;
+            
+        }
 
         NavMeshHit hit;
         

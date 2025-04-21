@@ -70,6 +70,13 @@ public class AIRabbits : MonoBehaviour
         Vector3 newPos = new Vector3(Random.Range(animalArea.position.x - xExtent, animalArea.position.x + xExtent), animalArea.position.y, 
             Random.Range(animalArea.position.z - zExtent, animalArea.position.z + zExtent));
 
+        RaycastHit rayHit;
+        if (Physics.Raycast(newPos, Vector3.down, out rayHit, 100f))
+        {
+            newPos = rayHit.point;
+            transform.up = rayHit.normal;
+        }
+
         NavMeshHit hit;
         
         if(!NavMesh.SamplePosition(newPos, out hit, .6f, NavMesh.AllAreas))

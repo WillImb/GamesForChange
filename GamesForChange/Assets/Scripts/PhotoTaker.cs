@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using Unity.VisualScripting;
+using UnityEditor;
 
 public class PhotoTaker : MonoBehaviour
 {
@@ -124,7 +125,7 @@ public class PhotoTaker : MonoBehaviour
        
         
 
-        CheckAnimal();
+        
 
         cameraOverlay.SetActive(true);
 
@@ -141,10 +142,41 @@ public class PhotoTaker : MonoBehaviour
     }
 
 
-    void CheckAnimal()
+    void CheckAnimal(Sprite sprite)
     {
         RaycastHit hit;
-        if(Physics.SphereCast(cam.transform.position, 1, cam.transform.forward, out hit, 100f, mask))
+        if(Physics.SphereCast(cam.transform.position, 1, cam.transform.forward, out hit, 300f, mask))
+        {
+
+            Animal animal = hit.transform.GetComponent<Animal>();
+
+            if (animal.CheckIfHeadInView())
+            {
+                int index = entries.CheckFound(animal.title.ToLower());
+                if (index != -1)
+                {
+                   
+                    //save Photo;
+                    /*
+                    byte[] byteArray = screenCapture.EncodeToPNG();
+                    System.IO.File.WriteAllBytes(Application.dataPath + "/Saves/Photos/"+animal.title+"Photo.png", byteArray);
+                  
+                    Debug.Log("Saved Photo");
+                    */
+
+                    
+                    entries.loadImage(index, sprite);
+                    entries.isPicTaken[index] = true;
+                    entries.NewLoadText();
+                }
+            }
+                      
+        }
+    }
+    void CheckAnimalWeb()
+    {
+        RaycastHit hit;
+        if (Physics.SphereCast(cam.transform.position, 1, cam.transform.forward, out hit, 100f, mask))
         {
 
             Animal animal = hit.transform.GetComponent<Animal>();
@@ -156,24 +188,25 @@ public class PhotoTaker : MonoBehaviour
                 {
                     //save Photo;
                     byte[] byteArray = screenCapture.EncodeToPNG();
-                    System.IO.File.WriteAllBytes(Application.dataPath + "/Saves/Photos/"+animal.title+"Photo.png", byteArray);
+                    System.IO.File.WriteAllBytes(Application.persistentDataPath + "/Saves/Photos/" + animal.title + "Photo.png", byteArray);
                     entries.isPicTaken[index] = true;
                     Debug.Log("Saved Photo");
 
-                    entries.loadData();
+                    entries.loadDataWeb();
                 }
             }
-                      
         }
     }
+
 
     void ShowPhoto()
     {
 
+
         Sprite photoSprite = Sprite.Create(screenCapture, new Rect(0, 0, width, height), new Vector2(0f, 0f), 100.0f);
         photoDisplayArea.sprite = photoSprite;
 
-
+        CheckAnimal(photoSprite);
 
         photoFrame.SetActive(true);
         fadeAnimator.Play("PhotoFade");

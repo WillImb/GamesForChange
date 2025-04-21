@@ -130,10 +130,9 @@ public class LoadWorld : MonoBehaviour
     }
     void ResetSavePrefs()
     {
-        if (PlayerPrefs.GetString("save", "") != "")
-        {
-            PlayerPrefs.SetString("save", "");
-        }
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetString("save", "");
+        
     }
 
 

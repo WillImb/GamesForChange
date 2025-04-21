@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fb77a69fc0431a44a4b9aaf1c83de50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: turtle
+  title: painted turtle
   head: {fileID: 3340449590508262592}
 --- !u!65 &7860976229570289316
 BoxCollider:

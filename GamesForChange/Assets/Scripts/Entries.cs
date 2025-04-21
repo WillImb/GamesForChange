@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Windows;
 
 public class Entries : MonoBehaviour
 {
@@ -30,8 +32,9 @@ public class Entries : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        readData();
-        loadData();
+        NewLoadText();
+        // readData();
+        //loadData();
     }
 
     // Update is called once per frame
@@ -108,7 +111,19 @@ public class Entries : MonoBehaviour
         }
         */
     }
-
+    public void NewLoadText()
+    {
+        for (int i = 0; i < animals.Length; i++)
+        {
+            nameText[i].text = animals[i];
+            if (isPicTaken[i])
+            {
+                statText[i].text = stats[i];
+                blurbText[i].text = blurb[i];
+                
+            }
+        }
+    }
     public void loadData()
     {
         //loading all the names
@@ -130,6 +145,37 @@ public class Entries : MonoBehaviour
             }
         }
     }
+    public void loadImage(int index, Sprite sprite)
+    {
+        if (!isPicTaken[index])
+        {
+            images[index].sprite = sprite;
+        }
+        
+    }
+
+        public void loadDataWeb()
+    {
+        //loading all the names
+        for (int i = 0; i < animals.Length; i++)
+        {
+            nameText[i].text = "Name: " + animals[i];
+            //load data that is only available if theres a pic
+            if (isPicTaken[i])
+            {
+                statText[i].text = stats[i];
+                blurbText[i].text = blurb[i];
+                //Loading the images
+                byte[] byteArray = System.IO.File.ReadAllBytes(Application.persistentDataPath + "/Saves/Photos/" + animals[i].ToLower() + "Photo.png");
+                Texture2D tex = new Texture2D(2, 2);
+                tex.LoadImage(byteArray);
+                Rect rec = new Rect(0, 0, tex.width, tex.height);
+                Sprite sprite = Sprite.Create(tex, rec, new Vector2(0, 0), 1);
+                images[i].sprite = sprite;
+            }
+        }
+    }
+
     public int CheckFound(string name)
     {
         
