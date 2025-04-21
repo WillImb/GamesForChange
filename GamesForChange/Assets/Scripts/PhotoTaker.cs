@@ -15,7 +15,7 @@ public class PhotoTaker : MonoBehaviour
     [SerializeField] GameObject photoFrame;
     [SerializeField] bool aimed;
     public GameObject cameraOverlay;
-
+  
     public UIManager uimanager;
 
     Texture2D screenCapture;
@@ -54,8 +54,9 @@ public class PhotoTaker : MonoBehaviour
             if (!uimanager.screenOpen)
             {
                 uimanager.screenOpen = true;
-                aimed = true;
+                aimed = true;                      
                 cameraOverlay.SetActive(aimed);
+                
             }
             else
             {
@@ -64,6 +65,9 @@ public class PhotoTaker : MonoBehaviour
                     uimanager.screenOpen = false;
                     aimed = false;
                     cameraOverlay.SetActive(aimed);
+                                            
+                    
+
                 }
             }
             

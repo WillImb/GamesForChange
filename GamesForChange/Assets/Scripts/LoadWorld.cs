@@ -27,7 +27,7 @@ public class LoadWorld : MonoBehaviour
     private void Update()
     {
         //Delete These before Build
-
+        /*
         //Save World
         if (Input.GetKeyDown(KeyCode.M))
         {
@@ -43,6 +43,7 @@ public class LoadWorld : MonoBehaviour
         {
             ResetSavePrefs();
         }
+        */
     }
 
 
