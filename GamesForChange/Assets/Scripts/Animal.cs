@@ -19,10 +19,11 @@ public class Animal : MonoBehaviour
     }
 
 
-    public bool CheckIfHeadInView()
+    public bool CheckIfHeadInView(LayerMask mask)
     {
+        Debug.Log("hit");
         RaycastHit hit;
-        if(Physics.Raycast(head.position,Camera.main.transform.position - head.position, out hit , 300f))  
+        if(Physics.Raycast(head.position,Camera.main.transform.position - head.position, out hit , 300f, mask))  
         {
            
             if (hit.transform.name == "Player")

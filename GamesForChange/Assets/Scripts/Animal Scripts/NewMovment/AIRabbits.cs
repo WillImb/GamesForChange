@@ -20,6 +20,8 @@ public class AIRabbits : MonoBehaviour
     public float wanderSpeed;
     public float fleeSpeed;
 
+    public Animator animator;
+
     public Transform player;
     public int fleeDist;
     public Transform hole;
@@ -37,6 +39,7 @@ public class AIRabbits : MonoBehaviour
         if (isFleeing)
         {
             m_Agent.speed = fleeSpeed;
+            animator.SetBool("wandering", true);
             m_Agent.destination = hole.position;
 
             if (Vector3.Distance(transform.position, hole.position) < 1f)
@@ -93,7 +96,7 @@ public class AIRabbits : MonoBehaviour
     {
         isWandering = false;
 
-        
+        animator.SetBool("wandering", false);
 
         int secs = Random.Range(5, 10);
         yield return new WaitForSeconds(secs);
@@ -104,6 +107,7 @@ public class AIRabbits : MonoBehaviour
             yield break;
         }
 
+        animator.SetBool("wandering", true);
         isWandering = true;
 
         m_Agent.destination = GetNewDest();

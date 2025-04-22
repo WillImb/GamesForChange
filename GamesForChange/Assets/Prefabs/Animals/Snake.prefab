@@ -296,6 +296,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5308523330864871512}
   - component: {fileID: 624343558031312362}
+  - component: {fileID: 5176080669234987438}
   m_Layer: 3
   m_Name: Snake
   m_TagString: Untagged
@@ -334,6 +335,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: eastern rat snake
   head: {fileID: 3340449590508262592}
+--- !u!65 &5176080669234987438
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7669592359363603698}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.17296237, y: 0.18117557, z: 4.9283266}
+  m_Center: {x: 0, y: -0.11509163, z: -2.477941}
 --- !u!1 &7992291789007795090
 GameObject:
   m_ObjectHideFlags: 0

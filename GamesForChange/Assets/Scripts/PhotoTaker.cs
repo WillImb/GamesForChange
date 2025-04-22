@@ -33,7 +33,7 @@ public class PhotoTaker : MonoBehaviour
     float y;
 
     public LayerMask mask;
-
+    public LayerMask animalMask;
 
     [SerializeField] Animator fadeAnimator;
     // Start is called before the first frame update
@@ -154,7 +154,7 @@ public class PhotoTaker : MonoBehaviour
 
             Animal animal = hit.transform.GetComponent<Animal>();
 
-            if (animal.CheckIfHeadInView())
+            if (animal.CheckIfHeadInView(animalMask))
             {
                 int index = entries.CheckFound(animal.title.ToLower());
                 if (index != -1)
@@ -184,8 +184,8 @@ public class PhotoTaker : MonoBehaviour
         {
 
             Animal animal = hit.transform.GetComponent<Animal>();
-
-            if (animal.CheckIfHeadInView())
+            
+            if (animal.CheckIfHeadInView(animalMask))
             {
                 int index = entries.CheckFound(animal.title.ToLower());
                 if (index != -1)
