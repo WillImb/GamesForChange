@@ -8,7 +8,7 @@ using System.IO;
 public class SaveAdnLoad : MonoBehaviour
 {
     public Button newGameButton;
-    public Button continueButton;
+   
 
     public GameObject overWritePopUp;
 
@@ -20,14 +20,13 @@ public class SaveAdnLoad : MonoBehaviour
         //WebVersion
         if (PlayerPrefs.GetString("save", "") != "")
         {
-          
+
             newGameButton.interactable = true;
-            continueButton.interactable = true;
         }
         else
         {
-            
-            continueButton.interactable = false;
+
+
             newGameButton.interactable = true;
         }
         //Desktop Version

@@ -24,7 +24,11 @@ public class Movement : MonoBehaviour
     {
         transform.rotation = Quaternion.Euler(transform.rotation.x, cam.transform.eulerAngles.y, transform.rotation.z);
 
-        
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 100)) {
+
+            transform.position = hit.point + new Vector3(0,5,0);
+        }
 
         
     }

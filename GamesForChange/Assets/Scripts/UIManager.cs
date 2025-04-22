@@ -59,7 +59,7 @@ public class UIManager : MonoBehaviour
 
     public void Resume()
     {
-        
+        screenOpen = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
