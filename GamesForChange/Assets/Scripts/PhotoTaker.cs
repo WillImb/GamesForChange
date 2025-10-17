@@ -157,7 +157,7 @@ public class PhotoTaker : MonoBehaviour
             if (animal.CheckIfHeadInView(animalMask))
             {
                 int index = entries.CheckFound(animal.title.ToLower());
-                if (index != -1)
+                if (index != -1 && !entries.isPicTaken[index])
                 {
                    
                     //save Photo;
@@ -210,7 +210,7 @@ public class PhotoTaker : MonoBehaviour
         Sprite photoSprite = Sprite.Create(screenCapture, new Rect(0, 0, width, height), new Vector2(0f, 0f), 100.0f);
         photoDisplayArea.sprite = photoSprite;
 
-        CheckAnimal(photoSprite);
+        CheckAnimal();
 
         photoFrame.SetActive(true);
         fadeAnimator.Play("PhotoFade");

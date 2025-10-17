@@ -149,7 +149,9 @@ public class Entries : MonoBehaviour
     {
         if (!isPicTaken[index])
         {
-            images[index].sprite = sprite;
+            //Sprite newSprite  = sprite;
+            //images[index].sprite = newSprite;
+            Debug.Log(index);
         }
         
     }
