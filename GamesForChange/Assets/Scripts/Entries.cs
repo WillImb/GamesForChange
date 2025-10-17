@@ -147,16 +147,25 @@ public class Entries : MonoBehaviour
     }
     public void loadImage(int index, Sprite sprite)
     {
+        
         if (!isPicTaken[index])
         {
+<<<<<<< HEAD
             //Sprite newSprite  = sprite;
             //images[index].sprite = newSprite;
             Debug.Log(index);
+=======
+            Debug.Log(index);
+            Sprite newSprite = sprite;
+            newSprite.name = animals[index];
+            images[index].sprite = newSprite;
+            isPicTaken[index] = true;
+>>>>>>> 433f940a065a841f097c21ca587ab77478bcee9a
         }
         
     }
 
-        public void loadDataWeb()
+    public void loadDataWeb()
     {
         //loading all the names
         for (int i = 0; i < animals.Length; i++)
@@ -168,7 +177,7 @@ public class Entries : MonoBehaviour
                 statText[i].text = stats[i];
                 blurbText[i].text = blurb[i];
                 //Loading the images
-                byte[] byteArray = System.IO.File.ReadAllBytes(Application.persistentDataPath + "/Saves/Photos/" + animals[i].ToLower() + "Photo.png");
+                byte[] byteArray = Convert.FromBase64String(PlayerPrefs.GetString(animals[i].ToLower() + "Photo", ""));
                 Texture2D tex = new Texture2D(2, 2);
                 tex.LoadImage(byteArray);
                 Rect rec = new Rect(0, 0, tex.width, tex.height);

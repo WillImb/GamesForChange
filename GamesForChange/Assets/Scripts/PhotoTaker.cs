@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using Unity.VisualScripting;
 using UnityEditor;
+using System;
 
 public class PhotoTaker : MonoBehaviour
 {
@@ -146,7 +147,7 @@ public class PhotoTaker : MonoBehaviour
     }
 
 
-    void CheckAnimal(Sprite sprite)
+    void CheckAnimal()
     {
         RaycastHit hit;
         if(Physics.SphereCast(cam.transform.position, 1, cam.transform.forward, out hit, 300f, mask))
@@ -159,18 +160,18 @@ public class PhotoTaker : MonoBehaviour
                 int index = entries.CheckFound(animal.title.ToLower());
                 if (index != -1 && !entries.isPicTaken[index])
                 {
-                   
-                    //save Photo;
-                    /*
-                    byte[] byteArray = screenCapture.EncodeToPNG();
-                    System.IO.File.WriteAllBytes(Application.dataPath + "/Saves/Photos/"+animal.title+"Photo.png", byteArray);
-                  
-                    Debug.Log("Saved Photo");
-                    */
 
+                    //save Photo;
+
+                    //byte[] byteArray = screenCapture.EncodeToPNG();
+                    //System.IO.File.WriteAllBytes(Application.dataPath + "/Saves/Photos/"+animal.title+"Photo.png", byteArray);
+
+                    //Debug.Log("Saved Photo");
                     
-                    entries.loadImage(index, sprite);
-                    entries.isPicTaken[index] = true;
+
+
+                    entries.loadDataWeb();
+                    
                     entries.NewLoadText();
                 }
             }
@@ -180,7 +181,7 @@ public class PhotoTaker : MonoBehaviour
     void CheckAnimalWeb()
     {
         RaycastHit hit;
-        if (Physics.SphereCast(cam.transform.position, 1, cam.transform.forward, out hit, 100f, mask))
+        if (Physics.SphereCast(cam.transform.position, 1, cam.transform.forward, out hit, 300f, mask))
         {
 
             Animal animal = hit.transform.GetComponent<Animal>();
@@ -192,7 +193,7 @@ public class PhotoTaker : MonoBehaviour
                 {
                     //save Photo;
                     byte[] byteArray = screenCapture.EncodeToPNG();
-                    System.IO.File.WriteAllBytes(Application.persistentDataPath + "/Saves/Photos/" + animal.title + "Photo.png", byteArray);
+                    PlayerPrefs.SetString(animal.title.ToLower() + "Photo", Convert.ToBase64String(byteArray));
                     entries.isPicTaken[index] = true;
                     Debug.Log("Saved Photo");
 
@@ -210,7 +211,11 @@ public class PhotoTaker : MonoBehaviour
         Sprite photoSprite = Sprite.Create(screenCapture, new Rect(0, 0, width, height), new Vector2(0f, 0f), 100.0f);
         photoDisplayArea.sprite = photoSprite;
 
+<<<<<<< HEAD
         CheckAnimal();
+=======
+        CheckAnimalWeb();
+>>>>>>> 433f940a065a841f097c21ca587ab77478bcee9a
 
         photoFrame.SetActive(true);
         fadeAnimator.Play("PhotoFade");
