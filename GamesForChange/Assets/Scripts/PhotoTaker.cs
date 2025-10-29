@@ -211,11 +211,11 @@ public class PhotoTaker : MonoBehaviour
         Sprite photoSprite = Sprite.Create(screenCapture, new Rect(0, 0, width, height), new Vector2(0f, 0f), 100.0f);
         photoDisplayArea.sprite = photoSprite;
 
-<<<<<<< HEAD
+
         CheckAnimal();
-=======
+
         CheckAnimalWeb();
->>>>>>> 433f940a065a841f097c21ca587ab77478bcee9a
+
 
         photoFrame.SetActive(true);
         fadeAnimator.Play("PhotoFade");

@@ -150,17 +150,17 @@ public class Entries : MonoBehaviour
         
         if (!isPicTaken[index])
         {
-<<<<<<< HEAD
+
             //Sprite newSprite  = sprite;
             //images[index].sprite = newSprite;
             Debug.Log(index);
-=======
+
             Debug.Log(index);
             Sprite newSprite = sprite;
             newSprite.name = animals[index];
             images[index].sprite = newSprite;
             isPicTaken[index] = true;
->>>>>>> 433f940a065a841f097c21ca587ab77478bcee9a
+
         }
         
     }
